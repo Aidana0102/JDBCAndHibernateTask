@@ -2,8 +2,12 @@ package peaksoft.model;
 
 import javax.persistence.*;
 
+
+
+
 @Table
 public class User {
+
     @Id
     private Long id;
 
@@ -24,6 +28,8 @@ public class User {
         this.lastName = lastName;
         this.age = age;
     }
+
+    User obj1=new User();
 
     public Long getId() {
         return id;
@@ -57,4 +63,14 @@ public class User {
         this.age = age;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", age=" + age +
+                ", obj1=" + obj1 +
+                '}';
+    }
 }
