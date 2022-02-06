@@ -4,11 +4,12 @@ import javax.persistence.*;
 
 
 
-
-@Table
+@Entity
+@Table(name = "users")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     @Column
@@ -28,8 +29,6 @@ public class User {
         this.lastName = lastName;
         this.age = age;
     }
-
-    User obj1=new User();
 
     public Long getId() {
         return id;
@@ -70,7 +69,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +
-                ", obj1=" + obj1 +
+               // ", obj1=" + obj1 +
                 '}';
     }
 }
